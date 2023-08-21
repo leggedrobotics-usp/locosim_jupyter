@@ -8,8 +8,7 @@ CONTAINER_IMAGE="$CONTAINER_NAME:$CONTAINER_TAG"
 echo $CONTAINER_IMAGE
 if [[ "$(docker images -q $CONTAINER_IMAGE 2> /dev/null)" == "" ]]; then
 	echo "Building $1 docker image..."
-	docker build -f Dockerfile -t $CONTAINER_IMAGE .
-	docker build -f Dockerfile -t locosim_jupyter:1.0 .
+	docker build -f Dockerfile -t $CONTAINER_IMAGE:1.0 .
 fi
 
 # Host paths
@@ -20,16 +19,24 @@ HOST_WORKDIR=$HOST_USER_HOME/ros_ws/src
 CONTAINER_USER_HOME=/home/$USER
 CONTAINER_WORKDIR=$CONTAINER_USER_HOME/ros_ws/src
 CONTAINER_LOCOSIM=$HOST_WORKDIR/locosim
+
+# create HOST_WORKDIR
 mkdir -p $HOST_WORKDIR
+
+BASHRC=$HOST_USER_HOME/.bashrc
+if [ ! -f "$BASHRC" ]; then
+    echo "$BASHRC does not exist."
+    cp .bashrc $HOST_USER_HOME/.bashrc
+fi
 
 # Creating useful folders in host
 if [ ! -d "$CONTAINER_LOCOSIM" ]; then
-	echo "$CONTAINER_LOCOSIM does not exist."
+	echo "creating $CONTAINER_LOCOSIM"
 	git clone https://github.com/gbrlb/locosim.git -b jupyter --recursive $CONTAINER_LOCOSIM
 fi
 
 docker run --rm -it  \
-	-u 1000:1000 \
+	-u $(id -u):$(id -g) \
 	-e USER  \
 	-e HOME \
 	-e SHELL \
