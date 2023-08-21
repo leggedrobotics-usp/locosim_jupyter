@@ -8,7 +8,7 @@ CONTAINER_IMAGE="$CONTAINER_NAME:$CONTAINER_TAG"
 echo $CONTAINER_IMAGE
 if [[ "$(docker images -q $CONTAINER_IMAGE 2> /dev/null)" == "" ]]; then
 	echo "Building $1 docker image..."
-	docker build -f Dockerfile -t $CONTAINER_IMAGE:1.0 .
+	docker build -f Dockerfile -t $CONTAINER_IMAGE .
 fi
 
 # Host paths
