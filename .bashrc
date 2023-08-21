@@ -23,4 +23,4 @@ cd $LOCOSIM_DIR
 
 export JUPYTER_ENABLE_LAB='yes'
 export JUPYTER_TOKEN='locosim'
-alias lab='jupyter lab --notebook-dir $LOCOSIM_DIR --no-browser'
+alias lab='jupyter lab --ip='*' --port 8888 --no-browser --allow-root --NotebookApp.allow_origin='*' --notebook-dir $LOCOSIM_DIR'
