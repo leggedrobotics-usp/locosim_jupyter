@@ -30,6 +30,8 @@ This repository is a customized setup based on [locosim](https://github.com/mfoc
       ```
     - **Windows WSL**:
       ```bash
+      sudo ufw allow 8888
+      sudo ufw enable
       ./run_wsl.sh
       ```
 
