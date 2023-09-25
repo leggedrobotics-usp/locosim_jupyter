@@ -8,11 +8,12 @@ docker run --rm -it  \
 	--env DOCKER=1  \
 	--env DISPLAY \
 	--env QT_X11_NO_MITSHM=1 \
-	--network=host \
+	-p 8888:8888 \
 	--volume /etc/group:/etc/group:ro   \
 	--volume /etc/passwd:/etc/passwd:ro \
 	--volume /etc/shadow:/etc/shadow:ro  \
 	--volume /etc/sudoers.d:/etc/sudoers.d:ro \
+	--volume /tmp/.X11-unix:/tmp/.X11-unix \
 	--volume "$(pwd)/$USER:$HOME:rw" \
 	--entrypoint bash \
 	--name locosim_jupyter \
