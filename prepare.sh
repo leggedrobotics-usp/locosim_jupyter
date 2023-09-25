@@ -13,13 +13,13 @@ HOST_LOCOSIMDIR=$HOST_WORKDIR/locosim
 CONTAINER_USER_HOME=/home/$USER/ros_ws/src
 CONTAINER_WORKDIR=$CONTAINER_USER_HOME/ros_ws/src
 
-if [[ "$(docker images -q $CONTAINER_IMAGE 2> /dev/null)" == "" ]]; then
-	echo "Building $1 docker image..."
-	docker build -f Dockerfile -t $CONTAINER_IMAGE .
-fi
+# if [[ "$(docker images -q $CONTAINER_IMAGE 2> /dev/null)" == "" ]]; then
+# 	echo "Building $1 docker image..."
+# 	docker build -f Dockerfile -t $CONTAINER_IMAGE . --progress=plain
+# fi
 
-# create HOST_WORKDIR
-mkdir -p $HOST_WORKDIR
+# # create HOST_WORKDIR
+mkdir -p "$HOST_WORKDIR"
 
 if [ ! -f "$HOST_USER_HOME/.bashrc" ]; then
     echo "Copy .bashrc to $HOST_USER_HOME"

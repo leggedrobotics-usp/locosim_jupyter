@@ -13,7 +13,7 @@ docker run --rm -it  \
 	--volume /etc/passwd:/etc/passwd:ro \
 	--volume /etc/shadow:/etc/shadow:ro  \
 	--volume /etc/sudoers.d:/etc/sudoers.d:ro \
-	--volume $(pwd)/$USER:$HOME:rw \
+	--volume "$(pwd)/$USER:$HOME:rw" \
 	--entrypoint bash \
 	--name locosim_jupyter \
 	locosim_jupyter:0.1
