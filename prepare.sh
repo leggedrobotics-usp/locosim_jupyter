@@ -12,7 +12,7 @@ HOST_LOCOSIMDIR=$HOST_WORKDIR/locosim
 # Container paths
 if [[ "$(docker images -q $CONTAINER_IMAGE 2> /dev/null)" == "" ]]; then
 	echo "Building $1 docker image..."
-	docker build -f Dockerfile -t $CONTAINER_IMAGE . --progress=plain
+	docker build -f Dockerfile -t $CONTAINER_IMAGE .
 fi
 
 # create HOST_WORKDIR
