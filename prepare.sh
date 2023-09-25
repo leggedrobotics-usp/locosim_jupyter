@@ -23,11 +23,11 @@ mkdir -p "$HOST_WORKDIR"
 
 if [ ! -f "$HOST_USER_HOME/.bashrc" ]; then
     echo "Copy .bashrc to $HOST_USER_HOME"
-    cp .bashrc $HOST_USER_HOME/.bashrc
+    cp .bashrc "$HOST_USER_HOME/.bashrc"
 fi
 
 # Creating useful folders in host
 if [ ! -d "$HOST_LOCOSIMDIR" ]; then
 	echo "Cloning $HOST_LOCOSIMDIR"
-	git clone https://github.com/gbrlb/locosim.git -b jupyter --recursive $HOST_LOCOSIMDIR
+	git clone https://github.com/gbrlb/locosim.git -b jupyter --recursive "$HOST_LOCOSIMDIR"
 fi
