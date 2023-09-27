@@ -14,8 +14,8 @@ This repository is a customized setup based on [locosim](https://github.com/mfoc
    - **Windows**:
      1. Install Windows Subsystem for Linux (WSL) by following the [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install) instructions.
      2. Install Docker by following the [Turn on Docker Desktop WSL 2](https://docs.docker.com/desktop/wsl/#turn-on-docker-desktop-wsl-2) instructions.
-     3. Run Docker Destop.
-     4. Run WSL.
+     3. Launch Docker Desktop.
+     4. Launch WSL.
      5. To navigate to the home directory in WSL, simply run: `cd ~`
 
 2. Clone this repository and run `prepare.sh`:
