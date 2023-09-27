@@ -4,14 +4,8 @@ This repository is a customized setup based on [locosim](https://github.com/mfoc
 
 ## Install and Run Locosim Jupyter
 
-1. Clone this repository and run `prepare.sh`:
-    ```bash
-    git clone https://github.com/gbrlb/locosim_jupyter.git
-    cd locosim_jupyter
-    ./prepare.sh
-    ```
 
-2. Install Docker:
+1. Install Docker:
    - **Linux**:
      ```bash
      curl -fsSL https://raw.githubusercontent.com/lomcin/linux-stuffs/master/install/docker -o install_docker.sh
@@ -20,6 +14,16 @@ This repository is a customized setup based on [locosim](https://github.com/mfoc
    - **Windows**:
      1. Install Windows Subsystem for Linux (WSL) by following the [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install) instructions.
      2. Install Docker by following the [Turn on Docker Desktop WSL 2](https://docs.docker.com/desktop/wsl/#turn-on-docker-desktop-wsl-2) instructions.
+     3. Run Docker Destop.
+     4. Run WSL.
+     5. To navigate to the home directory in WSL, simply run: `cd ~`
+
+2. Clone this repository and run `prepare.sh`:
+    ```bash
+    git clone https://github.com/gbrlb/locosim_jupyter.git
+    cd locosim_jupyter
+    ./prepare.sh
+    ```
 
 ### Usage
 
