@@ -16,6 +16,7 @@ docker run --rm -it  \
 	--volume /tmp/.X11-unix:/tmp/.X11-unix \
 	--volume /mnt/wslg:/mnt/wslg \
 	--volume $(pwd)/$USER:$HOME:rw \
+	--privileged \
 	--entrypoint bash \
 	--name locosim_jupyter \
 	locosim_jupyter:0.1

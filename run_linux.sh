@@ -15,6 +15,7 @@ docker run --rm -it  \
 	--volume "/etc/sudoers.d:/etc/sudoers.d:ro" \
 	--volume "/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 	--volume "$(pwd)/$USER:$HOME:rw" \
+	--privileged \
 	--entrypoint bash \
 	--name locosim_jupyter \
 	locosim_jupyter:0.1
