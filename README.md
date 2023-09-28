@@ -9,7 +9,8 @@ This repository is a customized setup based on [locosim](https://github.com/mfoc
    - **Linux**:
      ```bash
      curl -fsSL https://raw.githubusercontent.com/lomcin/linux-stuffs/master/install/docker -o install_docker.sh
-     sudo sh ./install_docker.sh
+     chmod +x install_docker.sh
+     ./install_docker.sh
      ```
    - **Windows**:
      1. Install Windows Subsystem for Linux (WSL) by following the [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install) instructions.
