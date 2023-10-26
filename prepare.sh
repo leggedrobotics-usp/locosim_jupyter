@@ -10,10 +10,9 @@ HOST_WORKDIR=$HOST_USER_HOME/ros_ws/src
 HOST_LOCOSIMDIR=$HOST_WORKDIR/locosim
 
 # Container paths
-if [[ "$(docker images -q $CONTAINER_IMAGE 2> /dev/null)" == "" ]]; then
-	echo "Building $1 docker image..."
-	docker build -f Dockerfile -t $CONTAINER_IMAGE .
-fi
+echo "Building $1 docker image..."
+docker build -f Dockerfile -t $CONTAINER_IMAGE .
+
 
 # create HOST_WORKDIR
 mkdir -p "$HOST_WORKDIR"
