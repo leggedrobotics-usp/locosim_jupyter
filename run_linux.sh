@@ -18,4 +18,5 @@ docker run --rm -it  \
 	--privileged \
 	--entrypoint bash \
 	--name locosim_jupyter \
+	--ulimit rtprio=98:98 \
 	locosim_jupyter:0.1
