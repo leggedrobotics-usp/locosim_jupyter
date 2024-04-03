@@ -1,6 +1,16 @@
 #!/bin/bash
 
+# Automatically detect NVIDIA's GPU and try to use it
+if [ -z "$(lspci | grep NVIDIA)" ]; then
+		USE_GPUS=""
+		echo "NVIDIA's GPU WAS NOT detected."
+else
+		USE_GPUS="--gpus all"
+		echo "NVIDIA's GPU WAS detected. Activating '--gpus all' flag."
+fi
+
 docker run --rm -it  \
+	$USE_GPUS \
 	--user=$(id -u):$(id -g) \
 	--env USER  \
 	--env HOME \
