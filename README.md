@@ -68,3 +68,25 @@ This repository is a customized setup based on [locosim](https://github.com/mfoc
 
 6. In the Jupyter Lab, navigate to [L1_kinematics.ipynb](http://localhost:8888/lab/tree/robot_control/lab_exercises/L1_kinematics.ipynb) located at `robot_control/lab_exercises/` to access the example exercise.
 
+## Troubleshooting
+
+If you encounter an error while running `./prepare.sh` related to downloading the `robot_control` or `ros_impedance_controller` packages, you can manually clone the repositories as follows:
+
+1. Clone the `robot_control` repository:
+```bash
+git clone https://github.com/gbrlb/robot_control.git -b jupyter "$(pwd)/$USER/ros_ws/src/locosim/robot_control"
+```
+
+2. Clone the `ros_impedance_controller` repository:
+  ```bash
+  git clone https://github.com/gbrlb/ros_impedance_controller.git "$(pwd)/$USER/ros_ws/src/locosim/ros_impedance_controller"
+  ```
+
+Then [run the Docker](#Usage) script, and inside the Docker container, rebuild ROS as follows:
+
+```bash
+source /opt/ros/noetic/setup.bash
+cd $HOME/ros_ws
+catkin build
+source $HOME/ros_ws/devel/setup.bash
+```
