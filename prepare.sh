@@ -11,8 +11,7 @@ HOST_LOCOSIMDIR=$HOST_WORKDIR/locosim
 
 # Container paths
 echo "Building $1 docker image..."
-docker build -f Dockerfile -t $CONTAINER_IMAGE .
-
+docker build --no-cache -f Dockerfile -t $CONTAINER_IMAGE .
 
 # create HOST_WORKDIR
 mkdir -p "$HOST_WORKDIR"
