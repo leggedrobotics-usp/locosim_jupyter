@@ -30,7 +30,7 @@ This repository is a customized setup based on [locosim](https://github.com/mfoc
 
 2. Clone this repository and run `prepare.sh`:
     ```bash
-    git clone https://github.com/gbrlb/locosim_jupyter.git
+    git clone https://github.com/leggedrobotics-usp/locosim_jupyter.git
     cd locosim_jupyter
     ./prepare.sh
     ```
