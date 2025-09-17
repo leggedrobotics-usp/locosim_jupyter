@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source ./prepare.sh
 # Allow Docker containers to access the WSLg/host X server
 xhost +SI:localuser:$(whoami)
 
@@ -29,4 +29,4 @@ docker run --rm -it \
     --ulimit rtprio=98:98 \
     --name locosim_jupyter \
     --entrypoint bash \
-    locosim_jupyter:0.1
+    $CONTAINER_IMAGE

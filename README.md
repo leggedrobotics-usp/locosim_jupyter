@@ -32,7 +32,6 @@ This repository is a customized setup based on [locosim](https://github.com/mfoc
     ```bash
     git clone https://github.com/leggedrobotics-usp/locosim_jupyter.git
     cd locosim_jupyter
-    ./prepare.sh
     ```
 
 ### Usage

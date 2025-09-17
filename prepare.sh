@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CONTAINER_NAME=locosim_jupyter
-CONTAINER_TAG=0.1
+CONTAINER_NAME=leggedroboticsusp/locosim
+CONTAINER_TAG=jupyter-v0.2
 CONTAINER_IMAGE=$CONTAINER_NAME:$CONTAINER_TAG
 
 # Host paths
@@ -9,9 +9,13 @@ HOST_USER_HOME=$(pwd)/$USER
 HOST_WORKDIR=$HOST_USER_HOME/ros_ws/src
 HOST_LOCOSIMDIR=$HOST_WORKDIR/locosim
 
-# Container paths
-echo "Building $1 docker image..."
-docker build --no-cache -f Dockerfile -t $CONTAINER_IMAGE .
+if docker image inspect "$CONTAINER_IMAGE" >/dev/null 2>&1; then
+    echo "Image $CONTAINER_IMAGE found locally, skipping pull."
+else
+    echo "Pulling $CONTAINER_IMAGE docker image..."
+    docker pull $CONTAINER_IMAGE
+fi
+# docker build --no-cache -f Dockerfile -t $CONTAINER_IMAGE .
 
 # create HOST_WORKDIR
 mkdir -p "$HOST_WORKDIR"
