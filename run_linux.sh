@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source ./prepare.sh
 # Allow local docker containers to connect to the X server
 xhost +local:docker
 
@@ -34,4 +34,4 @@ docker run --rm -it \
     --ulimit rtprio=98:98 \
     --name locosim_jupyter \
     --entrypoint bash \
-    locosim_jupyter:0.1
+    $CONTAINER_IMAGE
